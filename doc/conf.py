@@ -10,17 +10,20 @@ author = "BioPAL team"
 copyright = "2021, BioPAL team"
 
 # -- General configuration ---------------------------------------------------
-extensions = [
-    "sphinx.ext.autosectionlabel",
-    "sphinx.ext.autodoc",
-    "sphinx.ext.autosummary",
-    "numpydoc",
-    "nbsphinx",
+extensions = []  # no extensions, just to display Site Offline
+
+exclude_patterns = [
+    "_build",
+    "**.ipynb_checkpoints",
+    "legacy",
+    "api/*",
+    "Notebooks/*",
+    "api.rst",
+    "documentation.md",
+    "getting_started.rst",
+    "overview.rst",
 ]
-autosummary_generate = True
-exclude_patterns = ["_build", "**.ipynb_checkpoints", "legacy"]
 
 # -- HTML options ------------------------------------------------------------
-html_logo = "_static/logo.png"
 html_static_path = ["_static"]
-html_theme = "furo"
+html_theme = "alabaster"  # default teme to avoid pip installations
